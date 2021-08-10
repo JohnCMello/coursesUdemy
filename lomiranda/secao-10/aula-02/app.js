@@ -1,4 +1,8 @@
-const multiply = require('./mod')
+// const number2 = require('./a/mod3')
+// const multiply = require('./a/b/mod2')
 
-const Cachorro = require('./mod')
-const cacau = new Cachorro('cacau')
+const Dog = require('./a/b/c/mod1')
+
+const cacau = new Dog('Cacau', 'Vira - lata')
+
+console.log(cacau)
