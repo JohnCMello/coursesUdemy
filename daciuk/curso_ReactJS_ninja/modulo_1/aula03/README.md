@@ -1,6 +1,6 @@
-## Conteúdo aprendido em aula
+## Topics in this class
 
-- Utilizar um servidor para servir nosso HTML
-- Criar um elemento React
-- Renderizar elemento no DOM
-- Elementos React !== Elementos DOM
+- Create http server
+- Create React element
+- Render element in the DOM
+- React Elements !== DOM Elements
