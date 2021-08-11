@@ -16,7 +16,7 @@ const chainingElements = React.createElement('div', null, [
     React.createElement(
       'i',
       null,
-      '<i> nested in <span> nested in <h1> '
+      '<i> nested in <span> nested in reactroot '
     )
   ),
   React.createElement(
@@ -28,4 +28,3 @@ const chainingElements = React.createElement('div', null, [
 ])
 
 ReactDOM.render(chainingElements, document.getElementById('app'))
-console.log(h1Arr)
