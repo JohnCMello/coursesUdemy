@@ -1,3 +1,5 @@
-# Repositório de estudos 
+# study repository
 
-## Cursos da udemy
+## udemu courses
+
+## random stuff?
