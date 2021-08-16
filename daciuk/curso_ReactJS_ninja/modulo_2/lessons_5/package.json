@@ -12,6 +12,11 @@
   "devDependencies": {
     "install": "^0.13.0",
     "webnpm": "^0.0.1",
-    "webpack-dev-server": "^1.16.5"
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "react": "15.4",
+    "react-dom": "15.4"
   }
 }
