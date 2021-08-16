@@ -1,0 +1,17 @@
+{
+  "name": "modulo_2",
+  "version": "1.0.0",
+  "description": "- webpack",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "install": "^0.13.0",
+    "webnpm": "^0.0.1",
+    "webpack-dev-server": "^1.16.5"
+  }
+}
