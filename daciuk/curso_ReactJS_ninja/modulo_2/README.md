@@ -1,3 +1,5 @@
-## topics covered in this class:
+## topics covered in this module:
 
 - webpack
+- -webpack-web-server
+- 
