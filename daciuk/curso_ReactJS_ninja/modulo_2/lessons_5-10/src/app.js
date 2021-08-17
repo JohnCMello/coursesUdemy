@@ -3,7 +3,7 @@
 import React from 'react'
 
 const App = React.createClass({
-  render: () => <div> App </div>
+  render: () => <div> Section 03 </div>
 })
 
 export default App
