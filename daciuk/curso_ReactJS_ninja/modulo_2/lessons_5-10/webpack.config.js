@@ -13,7 +13,7 @@ module.exports = {
       test: /\.js$/,
       exclude: /node_modules/,
       include: /src/,
-      loader: 'babel'
+      loader: 'babel-loader'
     }]
   }
 }
