@@ -14,3 +14,9 @@ for = htmlFor
 Lesson 3
 - getDefaultProps
 
+Lesson 4
+- passing data via props
+
+  
+
+
