@@ -7,9 +7,7 @@ const App = React.createClass({
   render: function () {
     return (
       <div className='container'>
-        <Title name='John' />
-        <label htmlFor="input">Input</label>
-        <input type="text" id='input' />
+        <Title />
       </div>
     )
   }
