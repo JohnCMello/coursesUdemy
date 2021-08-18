@@ -17,6 +17,8 @@ Lesson 3
 Lesson 4
 - passing data via props
 
+Lesson 5
+- rendering components using pure functions
   
 
 
