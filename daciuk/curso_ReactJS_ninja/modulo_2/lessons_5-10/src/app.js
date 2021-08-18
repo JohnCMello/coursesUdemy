@@ -6,7 +6,9 @@ import Title from './title'
 const App = React.createClass({
   render: function () {
     return (
-      <div> <Title name='John' /></div>
+      <div className='container'>
+        <Title name='John' number={0} array={[1, 2, 3]} object={{ person: 'Mussum' }} />
+      </div>
     )
   }
 
