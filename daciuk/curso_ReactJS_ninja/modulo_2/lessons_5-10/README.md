@@ -10,3 +10,7 @@ Lesson 2
 class = className
 for = htmlFor
 ```
+
+Lesson 3
+- getDefaultProps
+
