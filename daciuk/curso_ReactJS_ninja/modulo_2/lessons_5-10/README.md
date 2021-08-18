@@ -19,6 +19,9 @@ Lesson 4
 
 Lesson 5
 - rendering components using pure functions
+
+Lesson 6
+- rendering components using classes
   
 
 
