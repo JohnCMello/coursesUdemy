@@ -22,6 +22,11 @@ Lesson 5
 
 Lesson 6
 - rendering components using classes
+
+Lesson 7
+- prop 'key'
+
+
   
 
 
