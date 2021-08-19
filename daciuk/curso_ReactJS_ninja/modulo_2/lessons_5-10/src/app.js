@@ -1,17 +1,19 @@
 'use strict'
 
-import React from 'react'
+import React, { Component } from 'react'
 import Title from './title'
 
-const App = React.createClass({
-  render: function () {
+class App extends Component {
+  render() {
     return (
+      // this.props
       <div className='container'>
-        <Title name='John' number={0} array={[1, 2, 3]} object={{ person: 'Mussum' }} />
+        <Title name='John' />
       </div>
     )
   }
+}
 
-})
+// App.defaultProps= { }
 
 export default App
