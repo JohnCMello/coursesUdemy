@@ -2,15 +2,14 @@
 
 import React, { Component } from 'react'
 import Square from './square'
+import Alert from './alert'
 
 class App extends Component {
   render() {
     return (
-      <div>
-        {['yellow', 'pink', 'gray', 'pink'].map((square, id) => (
-          <Square key={id} color={square} />
-        ))}
-      </div>
+      <div className='container' onClick={Alert}>
+        <Square />
+      </div >
     )
   }
 }
