@@ -26,7 +26,11 @@ Lesson 6
 Lesson 7
 - prop 'key'
 
-
+Lesson 8
+- events
+```js
+onclick = onClick
+```
   
 
 
