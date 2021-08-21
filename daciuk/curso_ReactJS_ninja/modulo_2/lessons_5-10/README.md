@@ -31,6 +31,12 @@ Lesson 8
 ```js
 onclick = onClick
 ```
+
+Lesson 9
+- children
+
+Lesson 10
+- composition
   
 
 
