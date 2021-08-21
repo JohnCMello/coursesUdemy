@@ -54,3 +54,7 @@ Lesson 10
 Lesson 11
 
 - state
+
+Lesson 12
+
+- arrow functions () => {}s
