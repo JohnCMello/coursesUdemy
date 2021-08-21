@@ -57,4 +57,8 @@ Lesson 11
 
 Lesson 12
 
-- arrow functions () => {}s
+- arrow functions () => {}
+
+Lesson 13
+
+- stateful X stateless
