@@ -1,7 +1,8 @@
 'use strict'
 
-const Alert = () => {
-  return alert('clicou')
+const Alert = (text) => {
+
+  return alert(`clicou ${text}`)
 }
 
 export default Alert
