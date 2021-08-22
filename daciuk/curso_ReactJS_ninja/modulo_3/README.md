@@ -62,3 +62,21 @@ Lesson 12
 Lesson 13
 
 - stateful X stateless
+
+Lesson 14
+
+- components lifecycle
+##### mounting / unmounting
+```js
+componentWillMount
+componentDidMount
+componentWillUnmount
+```
+
+##### updating
+```js
+componentWillReceiveProps(nextProps)
+shouldComponentUpdate(nextProps, nextState) => bool
+componentWillUpdate(nextProp, nextState)
+coponentDidUpdate(prevProp, prevState)
+```
