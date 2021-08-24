@@ -92,3 +92,10 @@ Lesson 16
 componentWillReceiveProps(nextProps)
 ```
 
+Lesson 17
+
+- updating flow
+  ```js
+shouldComponentUpdate(nextProps)
+```
+
