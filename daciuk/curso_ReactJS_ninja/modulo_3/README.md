@@ -81,6 +81,14 @@ componentWillUpdate(nextProp, nextState)
 coponentDidUpdate(prevProp, prevState)
 ```
 
-lesson 15
+Lesson 15
 
 - mounting / unmounting flow
+
+Lesson 16
+
+- updating flow
+```js
+componentWillReceiveProps(nextProps)
+```
+
