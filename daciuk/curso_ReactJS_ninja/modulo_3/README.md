@@ -95,7 +95,7 @@ componentWillReceiveProps(nextProps)
 Lesson 17
 
 - updating flow
-  ```js
+```js
 shouldComponentUpdate(nextProps)
 ```
 
