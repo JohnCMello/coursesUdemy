@@ -10,9 +10,7 @@ const Button = ({ children, handleClick }) => (
       handleClick(children)
     }}
   >
-
     {children}
-
   </button>
 )
 
