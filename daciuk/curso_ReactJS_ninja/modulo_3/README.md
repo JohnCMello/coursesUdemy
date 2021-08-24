@@ -68,9 +68,9 @@ Lesson 14
 - components lifecycle
 ##### mounting / unmounting
 ```js
-componentWillMount
-componentDidMount
-componentWillUnmount
+componentWillMount()
+componentDidMount()
+componentWillUnmount()
 ```
 
 ##### updating
@@ -80,3 +80,7 @@ shouldComponentUpdate(nextProps, nextState) => bool
 componentWillUpdate(nextProp, nextState)
 coponentDidUpdate(prevProp, prevState)
 ```
+
+lesson 15
+
+- mounting / unmounting flow
