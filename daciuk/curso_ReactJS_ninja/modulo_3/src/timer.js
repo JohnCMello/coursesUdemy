@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 
 class Timer extends Component {
   constructor() {
+    console.log('constructor timer')
     super()
 
     this.state = {
@@ -15,22 +16,29 @@ class Timer extends Component {
 
   //mount / unmount
   componentDidMount() {
+    console.log('componentDidMount timer')
     this.timer = setInterval(() => this.setState({ time: this.state.time + 1 }), 1000)
   }
 
   componentWillUnmount() {
+    console.log('componentWillMount timer')
     clearInterval(this.timer)
   }
 
   //update
   //deprecated - use getDerivedStateFromProps
   componentWillReceiveProps(nextProps) {
-    console.log('componentWillReceiveProps', this.props, nextProps)
+    console.log('componentWillReceiveProps timer', this.props, nextProps)
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log('shouldComponentUpdate', this.props, nextProps)
+    console.log('shouldComponentUpdate timer', this.props, nextProps)
     return this.state.time !== nextState.time
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    console.log('componentWillUpdate timer', this.props, nextProps)
+
   }
 
   render() {
