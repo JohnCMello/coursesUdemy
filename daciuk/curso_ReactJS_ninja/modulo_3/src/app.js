@@ -9,18 +9,19 @@ class App extends Component {
     console.log('constructor')
     super()
     this.state = {
+      time: 0,
       showTimer: true
     }
   }
 
-  //deprecated
-  // componentWillMount() {
-  //   console.log('componentWillMount')
-  // }
+  //deprecated - use componentDidMount
+  componentWillMount() {
+    console.log('componentWillMount')
+  }
 
-  // componentDidMount() {
-  //   console.log('componentDidMount')
-  // }
+  componentDidMount() {
+    console.log('componentDidMount')
+  }
 
   render() {
     console.log('inside render')
@@ -28,15 +29,13 @@ class App extends Component {
     return (
       <div>
 
-        {this.state.showTimer && <Timer />}
+        <Timer time={this.state.time} />
         <Button
           handleClick={() => {
-            this.setState({
-              showTimer: !this.state.showTimer
-            })
+            this.setState({ time: this.state.time + 1 })
           }}
         >
-          Show / Hide Time
+          Change Props
         </Button>
 
       </div>
