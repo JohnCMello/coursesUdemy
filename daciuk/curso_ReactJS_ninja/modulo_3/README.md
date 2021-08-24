@@ -96,6 +96,14 @@ Lesson 17
 
 - updating flow
 ```js
-shouldComponentUpdate(nextProps)
+shouldComponentUpdate(nextProps, nextState) => bool
 ```
+
+Lesson 18
+
+- updating flow
+ ```js
+componentWillUpdate(nextProp, nextState)
+``` 
+
 
