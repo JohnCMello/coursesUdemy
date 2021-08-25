@@ -16,7 +16,7 @@ class Timer extends Component {
 
   //mount / unmount
   componentDidMount() {
-    console.log('componentDidMount timer')
+    console.log('componentDidMount timer / this.state.time + 1')
     this.timer = setInterval(() => this.setState({ time: this.state.time + 1 }), 1000)
   }
 
@@ -32,13 +32,27 @@ class Timer extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log('shouldComponentUpdate timer', this.props, nextProps)
-    return this.state.time !== nextState.time
+    // console.log('shouldComponentUpdate timer', this.props, nextProps)
+    return this.props.time !== nextProps.time
   }
 
   componentWillUpdate(nextProps, nextState) {
-    console.log('componentWillUpdate timer', this.props, nextProps)
+    console.log(
+      'componentWillUpdate timer',
+      'this.props', this.props,
+      'this.state', this.state,
+      'nextProps', nextProps,
+      'nextState', nextState)
 
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(
+      'componentDidUpdate timer',
+      'this.props', this.props,
+      'this.state', this.state,
+      'prevProps', prevProps,
+      'prevState', prevState)
   }
 
   render() {
