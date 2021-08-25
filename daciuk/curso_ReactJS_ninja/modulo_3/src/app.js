@@ -10,12 +10,15 @@ class App extends Component {
       value: 'initial value'
     }
   }
+
   render() {
     return (
       <div>
-        <form >
+        <form>
           <input
-            type="text"
+            type='text'
+            // editable component / uncontrolled
+            // defaultValue='initial value'
             value={this.state.value}
             onChange={(e) => {
               this.setState({
