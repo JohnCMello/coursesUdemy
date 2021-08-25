@@ -116,4 +116,4 @@ Lesson 20
 - propTypes / PropTypes
 
 Lesson 21
-- forms in React
+- forms in React text input
