@@ -111,3 +111,7 @@ Lesson 19
 ```js
 componentDidUpdate(prevProp, prevState)
 ``` 
+
+Lesson 20 
+- propTypes / PropTypes
+
