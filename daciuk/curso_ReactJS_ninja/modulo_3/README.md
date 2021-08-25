@@ -102,8 +102,12 @@ shouldComponentUpdate(nextProps, nextState) => bool
 Lesson 18
 
 - updating flow
- ```js
+```js
 componentWillUpdate(nextProp, nextState)
 ``` 
 
-
+Lesson 19
+- updating flow
+```js
+componentDidUpdate(prevProp, prevState)
+``` 
