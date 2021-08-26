@@ -7,8 +7,7 @@ class App extends Component {
     super()
 
     this.state = {
-      value: 'Initial Value',
-      checked: false
+      value: '3'
     }
   }
 
@@ -16,34 +15,19 @@ class App extends Component {
     return (
       <div>
         <form>
-          <input
-            type='text'
-            // editable component / uncontrolled
-            // defaultValue='initial value'
+          <select
+            // multiple value={['1', '3']}
             value={this.state.value}
             onChange={(e) => {
               this.setState({
                 value: e.target.value
               })
             }}
-          />
-
-          <label htmlFor="">
-            <input
-              type="checkbox"
-              value='my-checkbox'
-              // defaultChecked={false}
-              checked={this.state.checked}
-              onChange={(e) => {
-                this.setState({ checked: e.target.checked })
-                // this.setState({ checked: !this.state.checked })
-              }}
-            />
-            Checkbox
-          </label>
-
-          <input type="radio" name="rd" id='rd1' value='1' defaultChecked />Radio 1
-          <input type="radio" name="rd" id='rd2 ' value='2' />Radio 2
+          >
+            <option value="1">option 1</option>
+            <option value="2">option 2</option>
+            <option value="3">option 3</option>
+          </select>
         </form>
       </div>
     )
