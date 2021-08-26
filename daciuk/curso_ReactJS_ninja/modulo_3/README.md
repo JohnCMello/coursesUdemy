@@ -81,6 +81,45 @@ componentWillUpdate(nextProp, nextState)
 coponentDidUpdate(prevProp, prevState)
 ```
 
-lesson 15
+Lesson 15
 
 - mounting / unmounting flow
+
+Lesson 16
+
+- updating flow
+```js
+componentWillReceiveProps(nextProps)
+```
+
+Lesson 17
+
+- updating flow
+```js
+shouldComponentUpdate(nextProps, nextState) => bool
+```
+
+Lesson 18
+
+- updating flow
+```js
+componentWillUpdate(nextProp, nextState)
+``` 
+
+Lesson 19
+- updating flow
+```js
+componentDidUpdate(prevProp, prevState)
+``` 
+
+Lesson 20 
+- propTypes / PropTypes
+
+Lesson 21
+- forms in React: text input
+
+Lesson 22
+- forms in React: checkbox/radio inputs
+
+Lesson 23
+- forms in React: select/option

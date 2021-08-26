@@ -10,10 +10,12 @@ const Button = ({ children, handleClick }) => (
       handleClick(children)
     }}
   >
-
     {children}
-
   </button>
 )
+
+Button.propTypes = {
+  handleClick: React.PropTypes.func.isRequired
+}
 
 export default Button

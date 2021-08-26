@@ -1,36 +1,37 @@
 'use strict'
 
 import React, { Component } from 'react'
-import Square from './square'
-import Button from './button'
 
 class App extends Component {
   constructor() {
     super()
+
     this.state = {
-      color: 'blue'
+      value: '3'
     }
   }
 
   render() {
     return (
       <div>
-        <Square color={this.state.color}/>
-
-        {['red', 'green', 'blue', 'orange', 'pink'].map(color=> (
-          <Button
-            key={color}
-            handleClick={()=> this.setState({color})}
-          > 
-            {color} 
-          </Button>
-
-        ))}
+        <form>
+          <select
+            // multiple value={['1', '3']}
+            value={this.state.value}
+            onChange={(e) => {
+              this.setState({
+                value: e.target.value
+              })
+            }}
+          >
+            <option value="1">option 1</option>
+            <option value="2">option 2</option>
+            <option value="3">option 3</option>
+          </select>
+        </form>
       </div>
     )
   }
 }
-
-// App.defaultProps= { }
 
 export default App
