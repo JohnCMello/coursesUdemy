@@ -126,3 +126,6 @@ Lesson 23
 
 Lesson 24
 - forms in React: textarea
+
+Lesson 24
+- forms in React: events
