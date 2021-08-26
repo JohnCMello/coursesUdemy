@@ -129,3 +129,7 @@ Lesson 24
 
 Lesson 24
 - forms in React: events
+
+Lesson 25
+- setState is async
+
