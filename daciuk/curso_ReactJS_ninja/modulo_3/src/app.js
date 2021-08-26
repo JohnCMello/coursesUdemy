@@ -7,7 +7,8 @@ class App extends Component {
     super()
 
     this.state = {
-      value: 'Initial Value'
+      value: 'Initial Value',
+      checked: false
     }
   }
 
@@ -26,6 +27,23 @@ class App extends Component {
               })
             }}
           />
+
+          <label htmlFor="">
+            <input
+              type="checkbox"
+              value='my-checkbox'
+              // defaultChecked={false}
+              checked={this.state.checked}
+              onChange={(e) => {
+                this.setState({ checked: e.target.checked })
+                // this.setState({ checked: !this.state.checked })
+              }}
+            />
+            Checkbox
+          </label>
+
+          <input type="radio" name="rd" id='rd1' value='1' defaultChecked />Radio 1
+          <input type="radio" name="rd" id='rd2 ' value='2' />Radio 2
         </form>
       </div>
     )
