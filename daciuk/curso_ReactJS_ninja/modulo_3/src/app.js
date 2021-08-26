@@ -7,7 +7,7 @@ class App extends Component {
     super()
 
     this.state = {
-      value: '3'
+      value: 'type here'
     }
   }
 
@@ -15,19 +15,15 @@ class App extends Component {
     return (
       <div>
         <form>
-          <select
-            // multiple value={['1', '3']}
+          {/* <textarea defaultValue='type here' /> */}
+          <textarea
             value={this.state.value}
             onChange={(e) => {
               this.setState({
                 value: e.target.value
               })
             }}
-          >
-            <option value="1">option 1</option>
-            <option value="2">option 2</option>
-            <option value="3">option 3</option>
-          </select>
+          />
         </form>
       </div>
     )
