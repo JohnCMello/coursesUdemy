@@ -117,3 +117,6 @@ Lesson 20
 
 Lesson 21
 - forms in React text input
+
+Lesson 22
+- forms in React checkbox/radio inputs
