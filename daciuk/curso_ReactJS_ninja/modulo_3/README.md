@@ -116,7 +116,10 @@ Lesson 20
 - propTypes / PropTypes
 
 Lesson 21
-- forms in React text input
+- forms in React: text input
 
 Lesson 22
-- forms in React checkbox/radio inputs
+- forms in React: checkbox/radio inputs
+
+Lesson 23
+- forms in React: select/option
