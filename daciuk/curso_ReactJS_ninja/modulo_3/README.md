@@ -123,3 +123,6 @@ Lesson 22
 
 Lesson 23
 - forms in React: select/option
+
+Lesson 24
+- forms in React: textarea
