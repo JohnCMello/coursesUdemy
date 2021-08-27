@@ -1,40 +1,46 @@
 'use strict'
 
 import React, { Component } from 'react'
+import Actions from './components/actions'
+import Repos from './components/repos'
+import Search from './components/search'
+import UserInfo from './components/user-info'
 
 class App extends Component {
   constructor() {
     super()
-
-    this.state = {
-      checked: false,
-      showContent: false
-    }
+    this.state = {}
   }
 
   render() {
     return (
-      <div>
-        <label>
-          <input
-            type='checkbox'
-            checked={this.state.checked}
-            onChange={() => {
-              this.setState({
-                checked: !this.state.checked
-                // checked: e.target.checked
-              }, () => {
-                this.setState({
-                  showContent: this.state.checked
-                })
-                console.log(this.state.checked)
-              })
-            }}
-          /> Show content
-        </label>
-        {this.state.showContent && <div>I'm here!</div>}
+      <div className='app'>
+        <Search />
 
-      </div>
+        <UserInfo />
+
+        <Actions />
+
+        <Repos
+          className='repos'
+          title='Repositories'
+          repos={[{
+            name: 'repo',
+            link: '#',
+            id: 'id-1'
+          }]}
+        />
+
+        <Repos
+          className='starred'
+          title='Starred Repositories'
+          repos={[{
+            name: 'star-repo',
+            link: '#',
+            id: 'id-2'
+          }]}
+        />
+      </div >
     )
   }
 }
