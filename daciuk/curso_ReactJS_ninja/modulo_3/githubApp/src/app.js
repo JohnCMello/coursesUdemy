@@ -1,6 +1,10 @@
 'use strict'
 
 import React, { Component } from 'react'
+import Actions from './components/actions'
+import Repos from './components/repos'
+import Search from './components/search'
+import UserInfo from './components/user-info'
 
 class App extends Component {
   constructor() {
@@ -11,45 +15,32 @@ class App extends Component {
   render() {
     return (
       <div className='app'>
+        <Search />
 
-        <div className='search'>
-          <input type='search' placeholder='Type user name' />
-        </div>
+        <UserInfo />
 
-        <div className='user-info'>
-          <img src='https://avatars.githubusercontent.com/u/65418937?v=4' />
-          <h1>
-            <a href='http://api.github.com/users/JohnCMello'>John Mello</a>
-          </h1>
+        <Actions />
 
-          <ul className='repos-info'>
-            <li> Repos </li>
-            <li> Folowers </li>
-            <li> Following </li>
-          </ul>
+        <Repos
+          className='repos'
+          title='Repositories'
+          repos={[{
+            name: 'repo',
+            link: '#',
+            id: 'id-1'
+          }]}
+        />
 
-          <div className-='actions'>
-            <button>Go to Repos</button>
-            <button>Go to Stared Repos</button>
-          </div>
-
-          <div className='repos'>
-            <h2>Repositories</h2>
-            <ul>
-              <li><a href="#">REPO NAME</a></li>
-            </ul>
-          </div>
-
-          <div className='starred'>
-            <h2>Starred Repositories</h2>
-            <ul>
-              <li><a href="#">REPO NAME</a></li>
-            </ul>
-          </div>
-
-        </div>
-
-      </div>
+        <Repos
+          className='starred'
+          title='Starred Repositories'
+          repos={[{
+            name: 'star-repo',
+            link: '#',
+            id: 'id-2'
+          }]}
+        />
+      </div >
     )
   }
 }
