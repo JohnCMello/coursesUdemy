@@ -1,6 +1,6 @@
 'use strict'
 
-import React from 'react'
+import React, { PropTypes } from 'react'
 
 const Repos = ({ className, title, repos }) => (
   <div className={className}>
@@ -8,7 +8,7 @@ const Repos = ({ className, title, repos }) => (
     <ul>
       {repos.map((repo) => (
         <li key={repo.id}>
-          <a href={repo.link}>{repo.name}</a>
+          <a href={repo.url}>{repo.name}</a>
         </li>)
       )}
     </ul>
@@ -16,13 +16,14 @@ const Repos = ({ className, title, repos }) => (
 )
 
 Repos.defaultProps = {
-  className: '',
+  className: ''
 }
 
 Repos.propTypes = {
-  className: React.PropTypes.string,
-  title: React.PropTypes.string.isRequired,
-  repos: React.PropTypes.array
+  className: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  repos: PropTypes.array,
+  id: PropTypes.number
 }
 
 export default Repos
