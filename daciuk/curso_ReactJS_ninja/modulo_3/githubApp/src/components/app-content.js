@@ -1,40 +1,48 @@
 'use strict'
 
-import React from 'react'
+import React, { PropTypes } from 'react'
 import Actions from './actions'
 import Repos from './repos'
 import Search from './search'
 import UserInfo from './user-info'
 
 
-const AppContent = () => (
+const AppContent = ({ userInfo, repos, starredRepos }) => (
   <div className='app'>
     <Search />
 
-    <UserInfo />
+    {!!userInfo &&
+      <UserInfo
+        userInfo={userInfo}
+      />
+    }
 
-    <Actions />
+    {!!userInfo &&
+      <Actions />
+    }
 
-    <Repos
-      className='repos'
-      title='Repositories'
-      repos={[{
-        name: 'repo',
-        link: '#',
-        id: 'id-1'
-      }]}
-    />
+    {!!repos.length &&
+      <Repos
+        className='repos'
+        title='Repositories'
+        repos={repos}
+      />
+    }
 
-    <Repos
-      className='starred'
-      title='Starred Repositories'
-      repos={[{
-        name: 'star-repo',
-        link: '#',
-        id: 'id-2'
-      }]}
-    />
+    {!!starredRepos.length &&
+      <Repos
+        className='starred'
+        title='Starred Repositories'
+        repos={starredRepos}
+      />
+    }
   </div >
 )
+
+AppContent.propTypes = {
+  userinfo: PropTypes.object,
+  repos: PropTypes.array.isRequired,
+  starredRepos: PropTypes.array.isRequired
+}
 
 export default AppContent
