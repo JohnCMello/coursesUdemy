@@ -15,6 +15,12 @@ class App extends Component {
     }
   }
 
+  getGitHubApiUrl(username, type) {
+    const _user = username ? `/${username}` : ''
+    const _type = type ? `/${type}` : ''
+    return `http://api.github.com/users${_user}${_type}`
+  }
+
   handleSearch(e) {
     const value = e.target.value
     const key = e.which || e.keyCode
@@ -24,7 +30,7 @@ class App extends Component {
 
     if (key === ENTER) {
       ajax()
-        .get(`http://api.github.com/users/${value}`)
+        .get(this.getGitHubApiUrl(value))
         .then(({ name, avatar_url, login, public_repos, followers, following }) => {
           this.setState({
             userInfo: {
@@ -34,16 +40,19 @@ class App extends Component {
               repos: public_repos,
               followers,
               following
-            }
+            },
+            repos: [],
+            starred: []
           })
         })
     }
   }
 
   getRepos(repoType) {
-    return () => {
+    return (e) => {
+      const username = this.state.userInfo.login
       ajax()
-        .get(`http://api.github.com/users/${this.state.userInfo.login}/${repoType}`)
+        .get(this.getGitHubApiUrl(username, repoType))
         .then((repos) => {
           // if empty array throws exception !!TODO: fix this shit!
           this.setState({
