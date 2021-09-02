@@ -6,10 +6,9 @@ import Repos from './repos'
 import Search from './search'
 import UserInfo from './user-info'
 
-
-const AppContent = ({ userInfo, repos, starredRepos }) => (
+const AppContent = ({ userInfo, repos, starred, handleSearch, getRepos, getStarredRepos }) => (
   <div className='app'>
-    <Search />
+    <Search handleSearch={handleSearch} />
 
     {!!userInfo &&
       <UserInfo
@@ -18,7 +17,10 @@ const AppContent = ({ userInfo, repos, starredRepos }) => (
     }
 
     {!!userInfo &&
-      <Actions />
+      <Actions
+        getRepos={getRepos}
+        getStarredRepos={getStarredRepos}
+      />
     }
 
     {!!repos.length &&
@@ -29,11 +31,11 @@ const AppContent = ({ userInfo, repos, starredRepos }) => (
       />
     }
 
-    {!!starredRepos.length &&
+    {!!starred.length &&
       <Repos
         className='starred'
         title='Starred Repositories'
-        repos={starredRepos}
+        repos={starred}
       />
     }
   </div >
@@ -41,8 +43,11 @@ const AppContent = ({ userInfo, repos, starredRepos }) => (
 
 AppContent.propTypes = {
   userinfo: PropTypes.object,
-  repos: PropTypes.array.isRequired,
-  starredRepos: PropTypes.array.isRequired
+  repos: PropTypes.array,
+  starred: PropTypes.array,
+  handleSearch: PropTypes.func,
+  getRepos: PropTypes.func,
+  getStarredRepos: PropTypes.func
 }
 
 export default AppContent
