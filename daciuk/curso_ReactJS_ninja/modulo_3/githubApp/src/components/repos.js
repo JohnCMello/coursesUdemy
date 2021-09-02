@@ -9,8 +9,8 @@ const Repos = ({ className, title, repos }) => (
       {repos.map((repo) => (
         <li key={repo.id}>
           <a href={repo.url}>{repo.name}</a>
-        </li>)
-      )}
+        </li>
+      ))}
     </ul>
   </div>
 )
@@ -23,7 +23,9 @@ Repos.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string.isRequired,
   repos: PropTypes.array,
-  id: PropTypes.number
+  id: PropTypes.number,
+  url: PropTypes.string,
+  name: PropTypes.string
 }
 
 export default Repos
