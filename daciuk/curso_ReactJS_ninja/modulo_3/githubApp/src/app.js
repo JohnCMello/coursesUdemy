@@ -11,8 +11,11 @@ class App extends Component {
     this.state = {
       userInfo: null,
       repos: [],
-      starred: []
+      starred: [],
+      isFetching: false,
     }
+
+    this.handleSearch = this.handleSearch.bind(this)
   }
 
   getGitHubApiUrl(username, type) {
@@ -26,9 +29,11 @@ class App extends Component {
     const key = e.which || e.keyCode
     const ENTER = 13
 
-    console.log(key)
-
     if (key === ENTER) {
+      this.setState({
+        isFetching: true,
+      })
+
       ajax()
         .get(this.getGitHubApiUrl(value))
         .then(({ name, avatar_url, login, public_repos, followers, following }) => {
@@ -42,14 +47,19 @@ class App extends Component {
               following
             },
             repos: [],
-            starred: []
+            starred: [],
+          })
+        })
+        .always(() => {
+          this.setState({
+            isFetching: false,
           })
         })
     }
   }
 
   getRepos(repoType) {
-    return (e) => {
+    return () => {
       const username = this.state.userInfo.login
       ajax()
         .get(this.getGitHubApiUrl(username, repoType))
@@ -62,7 +72,6 @@ class App extends Component {
               url: html_url
             }))
           })
-          console.log(this.state)
         })
     }
   }
@@ -70,10 +79,8 @@ class App extends Component {
   render() {
     return (
       <AppContent
-        userInfo={this.state.userInfo}
-        repos={this.state.repos}
-        starred={this.state.starred}
-        handleSearch={(e) => this.handleSearch(e)}
+        {...this.state}
+        handleSearch={this.handleSearch}
         getRepos={this.getRepos('repos')}
         getStarredRepos={this.getRepos('starred')}
       />
