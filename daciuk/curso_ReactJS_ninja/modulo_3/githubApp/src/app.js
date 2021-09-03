@@ -11,8 +11,17 @@ class App extends Component {
     this.state = {
       userInfo: null,
       repos: [],
-      starred: []
+      starred: [],
+      isFetching: false,
     }
+
+    this.handleSearch = this.handleSearch.bind(this)
+  }
+
+  getGitHubApiUrl(username, type) {
+    const _user = username ? `/${username}` : ''
+    const _type = type ? `/${type}` : ''
+    return `http://api.github.com/users${_user}${_type}`
   }
 
   handleSearch(e) {
@@ -20,11 +29,13 @@ class App extends Component {
     const key = e.which || e.keyCode
     const ENTER = 13
 
-    console.log(key)
-
     if (key === ENTER) {
+      this.setState({
+        isFetching: true,
+      })
+
       ajax()
-        .get(`http://api.github.com/users/${value}`)
+        .get(this.getGitHubApiUrl(value))
         .then(({ name, avatar_url, login, public_repos, followers, following }) => {
           this.setState({
             userInfo: {
@@ -34,7 +45,14 @@ class App extends Component {
               repos: public_repos,
               followers,
               following
-            }
+            },
+            repos: [],
+            starred: [],
+          })
+        })
+        .always(() => {
+          this.setState({
+            isFetching: false,
           })
         })
     }
@@ -42,8 +60,9 @@ class App extends Component {
 
   getRepos(repoType) {
     return () => {
+      const username = this.state.userInfo.login
       ajax()
-        .get(`http://api.github.com/users/${this.state.userInfo.login}/${repoType}`)
+        .get(this.getGitHubApiUrl(username, repoType))
         .then((repos) => {
           // if empty array throws exception !!TODO: fix this shit!
           this.setState({
@@ -53,7 +72,6 @@ class App extends Component {
               url: html_url
             }))
           })
-          console.log(this.state)
         })
     }
   }
@@ -61,10 +79,8 @@ class App extends Component {
   render() {
     return (
       <AppContent
-        userInfo={this.state.userInfo}
-        repos={this.state.repos}
-        starred={this.state.starred}
-        handleSearch={(e) => this.handleSearch(e)}
+        {...this.state}
+        handleSearch={this.handleSearch}
         getRepos={this.getRepos('repos')}
         getStarredRepos={this.getRepos('starred')}
       />
