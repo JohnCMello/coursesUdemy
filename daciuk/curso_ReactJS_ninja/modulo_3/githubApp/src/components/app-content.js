@@ -6,21 +6,34 @@ import Repos from './repos'
 import Search from './search'
 import UserInfo from './user-info'
 
-const AppContent = ({ userInfo, repos, starred, handleSearch, getRepos, getStarredRepos }) => (
+const AppContent = ({
+  userInfo,
+  repos,
+  starred,
+  isFetching,
+  handleSearch,
+  getRepos,
+  getStarredRepos
+}) => (
   <div className='app'>
-    <Search handleSearch={handleSearch} />
+    <Search
+      handleSearch={handleSearch}
+      isSearchDisabled={isFetching}
+    />
 
-    {!!userInfo &&
+    {isFetching && <div>Loading...</div>}
+
+    {!!userInfo && (isFetching ||
       <UserInfo
         userInfo={userInfo}
-      />
+      />)
     }
 
-    {!!userInfo &&
+    {!!userInfo && (isFetching ||
       <Actions
         getRepos={getRepos}
         getStarredRepos={getStarredRepos}
-      />
+      />)
     }
 
     {!!repos.length &&
@@ -43,11 +56,12 @@ const AppContent = ({ userInfo, repos, starred, handleSearch, getRepos, getStarr
 
 AppContent.propTypes = {
   userinfo: PropTypes.object,
-  repos: PropTypes.array,
-  starred: PropTypes.array,
-  handleSearch: PropTypes.func,
-  getRepos: PropTypes.func,
-  getStarredRepos: PropTypes.func
+  repos: PropTypes.array.isRequired,
+  starred: PropTypes.array.isRequired,
+  isFetching: PropTypes.bool.isRequired,
+  handleSearch: PropTypes.func.isRequired,
+  getRepos: PropTypes.func.isRequired,
+  getStarredRepos: PropTypes.func.isRequired,
 }
 
 export default AppContent
