@@ -3,7 +3,6 @@
 //functional (recursion)
 
 const map = (arr = [], func = (item) => item) => {
-  const counter = 0
   return (function mapInternal(arrInternal, counter) {
     const [head, ...tail] = arrInternal
     return arrInternal.length === 0 ? [] : [
