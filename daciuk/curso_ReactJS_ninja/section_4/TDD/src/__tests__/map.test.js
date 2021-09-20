@@ -29,7 +29,7 @@ it('mapI([1,2], (item, index) => index) should return [0,1]', () => {
   expect(mapI([1, 2], (item, index) => index)).to.be.deep.equal([0, 1])
 })
 
-it('mapI([3,5], (item, index, arr) => arr) should return [3,5]', () => {
+it('mapI([3,5], (item, index, arr) => arr) should return [[3, 5], [3, 5]]', () => {
   expect(mapI([3, 5], (item, index, arr) => arr)).to.be.deep.equal([[3, 5], [3, 5]])
 })
 
@@ -39,6 +39,17 @@ it('mapI() should return []', () => {
 
 it('mapI([1,2]) should return [1,2]', () => {
   expect(mapI([1, 2])).to.be.deep.equal([1, 2])
+})
+
+it('map(1) should throw a TypeError', () => {
+  let error
+
+  try {
+    map(1)
+  } catch (e) {
+    error = e
+  }
+  expect(error.name).to.be.equal('TypeError')
 })
 
 //Recursive
@@ -66,7 +77,7 @@ it('mapF([1,2], (item, index) => index) should return [0,1]', () => {
   expect(mapF([1, 2], (item, index) => index)).to.be.deep.equal([0, 1])
 })
 
-it('mapF([3,5], (item, index, arr) => arr) should return [3,5]', () => {
+it('mapF([3,5], (item, index, arr) => arr) should return [[3, 5], [3, 5]/', () => {
   expect(mapF([3, 5], (item, index, arr) => arr)).to.be.deep.equal([[3, 5], [3, 5]])
 })
 
