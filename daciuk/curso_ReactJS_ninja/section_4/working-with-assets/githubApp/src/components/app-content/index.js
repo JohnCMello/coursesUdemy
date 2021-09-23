@@ -1,10 +1,12 @@
 'use strict'
 
 import React, { PropTypes } from 'react'
-import Actions from './actions'
-import Repos from './repos'
-import Search from './search'
-import UserInfo from './user-info'
+import Actions from '../actions'
+import Repos from '../repos'
+import Search from '../search'
+import UserInfo from '../user-info'
+
+import './app.css'
 
 const AppContent = ({
   userInfo,
@@ -36,21 +38,24 @@ const AppContent = ({
       />)
     }
 
-    {!!repos.length &&
-      <Repos
-        className='repos'
-        title='Repositories'
-        repos={repos}
-      />
-    }
+    <div className='repos-container'>
 
-    {!!starred.length &&
-      <Repos
-        className='starred'
-        title='Starred Repositories'
-        repos={starred}
-      />
-    }
+      {!!repos.length &&
+        <Repos
+          className='repos'
+          title='Repositories'
+          repos={repos}
+        />
+      }
+
+      {!!starred.length &&
+        <Repos
+          className='starred'
+          title='Starred Repositories'
+          repos={starred}
+        />
+      }
+    </div>
   </div >
 )
 
