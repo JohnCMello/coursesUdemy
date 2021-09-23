@@ -6,7 +6,7 @@ import Repos from '../repos'
 import Search from '../search'
 import UserInfo from '../user-info'
 
-import './app-content.css'
+import './app.css'
 
 const AppContent = ({
   userInfo,
@@ -38,21 +38,24 @@ const AppContent = ({
       />)
     }
 
-    {!!repos.length &&
-      <Repos
-        className='repos'
-        title='Repositories'
-        repos={repos}
-      />
-    }
+    <div className='repos-container'>
 
-    {!!starred.length &&
-      <Repos
-        className='starred'
-        title='Starred Repositories'
-        repos={starred}
-      />
-    }
+      {!!repos.length &&
+        <Repos
+          className='repos'
+          title='Repositories'
+          repos={repos}
+        />
+      }
+
+      {!!starred.length &&
+        <Repos
+          className='starred'
+          title='Starred Repositories'
+          repos={starred}
+        />
+      }
+    </div>
   </div >
 )
 

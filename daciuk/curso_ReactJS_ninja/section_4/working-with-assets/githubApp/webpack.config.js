@@ -4,11 +4,11 @@ const path = require('path')
 const webpack = require('webpack')
 
 const HtmlPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
 const DashboardPlugin = require('webpack-dashboard/plugin')
 
 module.exports = {
-  devtool: 'sourcemap',
+  devtool: 'source-map',
 
   entry: [
     'react-hot-loader/patch',
@@ -28,11 +28,11 @@ module.exports = {
 
     new DashboardPlugin(),
 
-    new ExtractTextPlugin('[name]-[hash].css'),
+
 
     new HtmlPlugin({
       title: 'GitHub App',
-      template: path.join(__dirname, 'src', 'html', 'template.html')
+      template: path.join(__dirname, 'src', 'html', 'template-dev.html')
     })
   ],
 
