@@ -1,8 +1,8 @@
 const express = require('express')
 const route = express.Router()
 
-const homeController = require('./controllers/homeController')
-const aboutController = require('./controllers/aboutController')
+const homeController = require('./src/controllers/homeController')
+const aboutController = require('./src/controllers/aboutController')
 
 
 //home
