@@ -16,9 +16,13 @@ const flash = require('connect-flash')
 
 const routes = require('./routes')
 const path = require('path')
+const helmet = require('helmet')
+const csrf = require('csurf')
 
 const { myMiddleware } = require('./src/middlewares/middleware')
 const MongoStore = require('connect-mongo')
+
+app.use(helmet())
 
 app.use(express.urlencoded({ extended: true }))
 
@@ -40,7 +44,10 @@ app.use(flash())
 app.set('views', path.resolve(__dirname, 'src', 'views'))
 app.set('view engine', 'ejs')
 
+app.use(csrf())
+
 app.use(myMiddleware)
+
 app.use(routes)
 
 app.on('ready', () => {
