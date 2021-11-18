@@ -1,8 +1,10 @@
 const express = require('express')
 const route = express.Router()
 
+//controllers
 const homeController = require('./src/controllers/homeController')
 const aboutController = require('./src/controllers/aboutController')
+
 
 
 //home
