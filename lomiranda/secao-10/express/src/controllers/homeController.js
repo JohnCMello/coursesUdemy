@@ -1,14 +1,8 @@
-const HomeModel = require('../models/HomeModel')
-
-HomeModel.create({
-  title: 'a random title',
-  description: 'a test description'
-})
-  .then(data => console.log(data))
-  .catch(err => console.log(err))
-
 exports.handleGet = (req, res) => {
-  res.render('index')
+  res.render('index', {
+    title: 'Some Title',
+    numbers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  })
 }
 
 exports.handlePost = (req, res) => {
