@@ -1,10 +1,14 @@
-const mongoos = require('mongoose')
+const mongoose = require('mongoose')
 
-const HomeSchema = new mongoos.Schema({
+const HomeSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: String
 })
 
-const HomeModel = mongoos.model('Home', HomeSchema)
+const HomeModel = mongoose.model('Home', HomeSchema)
+
+class Home {
+
+}
 
 module.exports = HomeModel
