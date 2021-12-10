@@ -1,18 +1,28 @@
-<%- include('includes/head'); %>
+<%- include('includes/head')%>
+  <%- include('includes/navbar') %>
 
-  <body>
-    <section class="container">
-      <h1>
-        <%=title%>
-      </h1>
-      <form action="/" method="post">
-        <label>Cliente</label>
-        <input type="text" name="cliente">
-        <button>Submit</button>
-      </form>
-    </section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2"></div>
 
-    <script src="./assets/js/bundle.js"></script>
-  </body>
+        <div class="col-lg-8">
+          <h1 class="text-center my-3">Agenda</h1>
+          <p class="text-center lead">Personal Contacts</p>
 
-  </html>
+          <%- include('includes/messages') %>
+
+            <div class="responsive-table">
+              <table class="table my-3">
+                <tr>
+                  <td>John</td>
+                  <td>Mello</td>
+                  <td>48 99876-5432</td>
+                  <td>johnmello@email.com</td>
+                </tr>
+              </table>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+      </div>
+    </div>
+    <%- include('includes/footer') %>
