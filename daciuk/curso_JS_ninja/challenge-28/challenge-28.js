@@ -124,8 +124,8 @@
 
   function handleReadyStateChange() {
     if (isRequestOK()) {
-      fillFields();
       getMessage('ok');
+      fillFields();
     }
   }
 
@@ -137,7 +137,7 @@
     let data = parseData();
     console.log(data)
     if (data.erro) {
-      getMessage('error');
+      getMessage('err');
       data = clearFields()
     }
 
@@ -170,7 +170,7 @@
     const messages = {
       loading: 'Buscando informações...',
       ok: 'Informações do CEP:',
-      error: 'Verifique o CEP digitado.'
+      err: 'Verifique o CEP digitado.'
     };
 
     $status.get()[0].textContent = messages[type]
