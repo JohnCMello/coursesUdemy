@@ -1,4 +1,4 @@
-(function() {
+(function (DOM) {
   'use strict';
 
   /*
@@ -36,4 +36,13 @@
   que será nomeado de "app".
   */
 
-})();
+  function app() {
+    return {
+      init: function () {
+      }
+    }
+  }
+
+  app().init()
+
+})(window.DOM);
