@@ -12,21 +12,18 @@ ul {
   margin: 0;
 }
 
-.actions,
-.repos-container {
+.reposContainer {
   display: flex;
   justify-content: space-between;
   float: left;
   width: 100%;
 }
 
-.actions button,
-.repos-container > div {
+.reposContainer > div {
   margin-right: 20px;
   width: 100%
 }
 
-.actions :first-child,
-.repos-container :first-child {
+.reposContainer :first-child {
   margin-left: 0;
 }

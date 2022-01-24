@@ -6,3 +6,18 @@
   height: 50px;
   text-transform: uppercase;
 }
+.actions{
+  display: flex;
+  justify-content: space-between;
+  float: left;
+  width: 100%;
+}
+
+.actions button{
+  margin-right: 20px;
+  width: 100%
+}
+
+.actions :first-child {
+  margin-left: 0;
+}

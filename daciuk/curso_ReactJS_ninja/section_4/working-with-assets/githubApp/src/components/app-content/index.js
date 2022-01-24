@@ -6,7 +6,7 @@ import Repos from '../repos'
 import Search from '../search'
 import UserInfo from '../user-info'
 
-import './app.css'
+import styles from './app.css'
 
 const AppContent = ({
   userInfo,
@@ -17,7 +17,7 @@ const AppContent = ({
   getRepos,
   getStarredRepos
 }) => (
-  <div className='app'>
+  <div className={styles.app}>
     <Search
       handleSearch={handleSearch}
       isSearchDisabled={isFetching}
@@ -38,11 +38,11 @@ const AppContent = ({
       />)
     }
 
-    <div className='repos-container'>
+    <div className={styles.reposContainer}>
 
       {!!repos.length &&
         <Repos
-          className='repos'
+          className={styles.repos}
           title='Repositories'
           repos={repos}
         />
@@ -50,7 +50,7 @@ const AppContent = ({
 
       {!!starred.length &&
         <Repos
-          className='starred'
+          className={styles.starred}
           title='Starred Repositories'
           repos={starred}
         />
