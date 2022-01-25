@@ -28,15 +28,13 @@ const AppContent = ({
     {!!userInfo && (isFetching ||
       <UserInfo
         userInfo={userInfo}
-      />)
-    }
+      />)}
 
     {!!userInfo && (isFetching ||
       <Actions
         getRepos={getRepos}
         getStarredRepos={getStarredRepos}
-      />)
-    }
+      />)}
 
     <div className={styles.reposContainer}>
 
@@ -45,18 +43,16 @@ const AppContent = ({
           className={styles.repos}
           title='Repositories'
           repos={repos}
-        />
-      }
+        />}
 
       {!!starred.length &&
         <Repos
           className={styles.starred}
           title='Starred Repositories'
           repos={starred}
-        />
-      }
+        />}
     </div>
-  </div >
+  </div>
 )
 
 AppContent.propTypes = {
@@ -66,7 +62,7 @@ AppContent.propTypes = {
   isFetching: PropTypes.bool.isRequired,
   handleSearch: PropTypes.func.isRequired,
   getRepos: PropTypes.func.isRequired,
-  getStarredRepos: PropTypes.func.isRequired,
+  getStarredRepos: PropTypes.func.isRequired
 }
 
 export default AppContent
