@@ -4,34 +4,33 @@ import React, { Component } from 'react'
 import AppContent from './components/app-content'
 import ajax from '@fdaciuk/ajax'
 
-
 class App extends Component {
-  constructor() {
+  constructor () {
     super()
     this.state = {
       userInfo: null,
       repos: [],
       starred: [],
-      isFetching: false,
+      isFetching: false
     }
 
     this.handleSearch = this.handleSearch.bind(this)
   }
 
-  getGitHubApiUrl(username, type) {
+  getGitHubApiUrl (username, type) {
     const _user = username ? `/${username}` : ''
     const _type = type ? `/${type}` : ''
     return `http://api.github.com/users${_user}${_type}`
   }
 
-  handleSearch(e) {
+  handleSearch (e) {
     const value = e.target.value
     const key = e.which || e.keyCode
     const ENTER = 13
 
     if (key === ENTER) {
       this.setState({
-        isFetching: true,
+        isFetching: true
       })
 
       ajax()
@@ -47,18 +46,18 @@ class App extends Component {
               following
             },
             repos: [],
-            starred: [],
+            starred: []
           })
         })
         .always(() => {
           this.setState({
-            isFetching: false,
+            isFetching: false
           })
         })
     }
   }
 
-  getRepos(repoType) {
+  getRepos (repoType) {
     return () => {
       const username = this.state.userInfo.login
       ajax()
@@ -76,7 +75,7 @@ class App extends Component {
     }
   }
 
-  render() {
+  render () {
     return (
       <AppContent
         {...this.state}
