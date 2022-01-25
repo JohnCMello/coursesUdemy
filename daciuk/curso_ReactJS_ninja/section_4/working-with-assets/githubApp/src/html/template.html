@@ -19,7 +19,7 @@
     <script async src="<%= jsFile %>"></script>
     <% }) %>
 
-      <% htmlWebpackPlugin.files.js.forEach((cssFile)=>{%>
+      <% htmlWebpackPlugin.files.css.forEach((cssFile)=>{%>
         <% if (cssFile!=='crp.css' ){%>
           <link rel="stylesheet" href="<%= cssFile %>">
           <%}%>

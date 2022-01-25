@@ -28,8 +28,6 @@ module.exports = {
 
     new DashboardPlugin(),
 
-
-
     new HtmlPlugin({
       title: 'GitHub App',
       template: path.join(__dirname, 'src', 'html', 'template-dev.html')
@@ -60,5 +58,12 @@ module.exports = {
         loaders: ['style', 'css?modules']
       }
     ]
+  },
+  resolve: {
+    alias: {
+      src: path.join(__dirname, 'src'),
+      components: path.join(__dirname, 'src', 'components')
+    }
   }
+
 }
