@@ -10,6 +10,6 @@ new WebpackDevServer(webpack(config), {
   historyApiFallback: true,
   stats: { colors: true }
 }).listen(9000, (err) => {
-  if (err) return console.log(err, "erro")
+  if (err) return console.log(err, 'erro')
   console.log('Server is up. localhost:9000')
 })
