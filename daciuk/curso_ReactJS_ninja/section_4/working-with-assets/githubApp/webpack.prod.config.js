@@ -14,7 +14,7 @@ module.exports = {
 
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name]-[hash].js',
+    filename: '[name]-[hash].js'
   },
 
   plugins: [
@@ -23,7 +23,7 @@ module.exports = {
 
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': '"production"'
+        NODE_ENV: '"production"'
       }
     }),
 
