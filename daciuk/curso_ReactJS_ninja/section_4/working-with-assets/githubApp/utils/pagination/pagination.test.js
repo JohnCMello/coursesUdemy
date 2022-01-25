@@ -159,3 +159,44 @@ test('pagination({total:15, activePage: 7}) should return [1,...,7,8,9,...,15]',
   const after = [1, '...', 7, 8, 9, '...', 15]
   expect(pagination(before)).to.be.deep.equal(after)
 })
+
+test('pagination({total:15}) should return [1,2, 3, ...,15]', () => {
+  const before = {
+    total: 15
+  }
+  const after = [1, 2, 3, '...', 15]
+  expect(pagination(before)).to.be.deep.equal(after)
+})
+
+test('pagination({}) should return [1]', () => {
+  const before = {}
+  const after = [1]
+  expect(pagination(before)).to.be.deep.equal(after)
+})
+
+test('pagination() should return [1]', () => {
+  const before = {}
+  const after = [1]
+  expect(pagination(before)).to.be.deep.equal(after)
+})
+
+test('pagination({ total: "abc", activePage: 1 }) should throw Error "total should be of type number"', () => {
+  const before = { total: "abc", activePage: 1 }
+  const after = 'total should be a number'
+  try {
+    pagination(before)
+  } catch (error) {
+    expect(error.message).to.be.equal(after)
+  }
+})
+
+test('pagination({ total: 1, activePage: "abc" }) should throw Error "activePage should be of type number"', () => {
+  const before = { total: 1, activePage: "abc" }
+  const after = 'activePage should be a number'
+  try {
+    pagination(before)
+  } catch (error) {
+    expect(error.message).to.be.equal(after)
+  }
+})
+
