@@ -1,10 +1,10 @@
 'use strict'
 
 import React, { PropTypes } from 'react'
-import './user-info.css'
+import styles from './user-info.css'
 
 const UserInfo = ({ userInfo }) => (
-  <div className='user-info'>
+  <div className={styles.userInfo}>
     <img src={userInfo.photo} />
 
     <h1>
@@ -13,7 +13,7 @@ const UserInfo = ({ userInfo }) => (
       </a>
     </h1>
 
-    <ul className='repos-info'>
+    <ul className={styles.reposInfo}>
       <li> Repos <strong> {userInfo.repos} </strong> </li>
       <li> Folowers <strong> {userInfo.followers} </strong> </li>
       <li> Following <strong> {userInfo.following} </strong> </li>

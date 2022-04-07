@@ -1,10 +1,10 @@
 'use strict'
 
 import React, { PropTypes } from 'react'
-import style from './search.css'
+import styles from './search.css'
 
 const Search = ({ handleSearch, isSearchDisabled }) => (
-  <div className={style.search}>
+  <div className={styles.search}>
     <input
       type='search'
       placeholder='Type user name'

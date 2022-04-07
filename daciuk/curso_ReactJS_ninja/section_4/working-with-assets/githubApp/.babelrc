@@ -2,9 +2,16 @@
   "presets": [
     "es2015",
     "stage-0",
+    "react",
+    "env",
     "react"
   ],
   "plugins": [
-    "react-hot-loader/babel"
+    "react-hot-loader/babel",
+    "transform-class-properties",
+    "transform-object-rest-spread"
+  ],
+  "test": [
+    "jest"
   ]
 }

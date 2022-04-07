@@ -1,9 +1,9 @@
 @charset 'utf-8';
 
-.repos-list li {
+.reposList li {
   padding: 10px 0;
 }
 
-.repos-list li + li {
+.reposList li + li {
   border-top: 1px solid #ccc;
 }
