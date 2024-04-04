@@ -1,4 +1,4 @@
-package estruturaCondicional;
+package secao_5_estrutura_condicional;
 
 public class ExpressaoCondicionalTernaria {
 
