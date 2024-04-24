@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/secao_15_excecoes/text.txt</name>
+			<type>1</type>
+			<location>F:/projetos/workspace/coursesUdemy/curso_java_nelio_alves/src/secao_15_excecoes/text.txt</location>
+		</link>
+	</linkedResources>
 </projectDescription>
