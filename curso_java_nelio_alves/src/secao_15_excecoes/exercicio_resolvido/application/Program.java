@@ -38,17 +38,14 @@ public class Program {
 			sc.close();
 		} catch (ParseException e) {
 			System.out.println("Invalid date format");
-		}
-//		catch (IllegalArgumentException e) {
-//			System.out.println("Error in reservation: " + e.getMessage());
-//		}
-		catch (DomainException e) {
+		} catch (DomainException e) {
 			System.out.println("Error in reservation: " + e.getMessage());
 		} catch (RuntimeException e) {
 			System.out.println("Unexpected error");
 		}
-
-		
+//		catch (IllegalArgumentException e) {
+//			System.out.println("Error in reservation: " + e.getMessage());
+//		}
 
 	}
 
