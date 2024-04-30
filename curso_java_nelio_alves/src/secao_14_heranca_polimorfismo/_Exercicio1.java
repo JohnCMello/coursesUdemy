@@ -24,7 +24,7 @@ public class _Exercicio1 {
 		sc.nextLine();
 
 		for (int i = 1; i <= numberOfEmployees; i++) {
-			Boolean isOutsourced = false;
+			boolean isOutsourced = false;
 			String outsourcedAnswer;
 			System.out.println("Employee #" + i + " data:");
 
